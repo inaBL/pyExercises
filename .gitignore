@@ -1,0 +1,4 @@
+#Ignore Pycharm virtual environment
+venv/
+.idea/
+.DS_Store
