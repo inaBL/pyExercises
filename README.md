@@ -1,6 +1,10 @@
 # pyExercises
-Course and challenge exercise for Python with Udemy and Checkio
+Exercise and task repo for Python, separated by topic.
 
-Tasks separated by exercise type.
-Preferred GUI: PyCharm. 
-External libraries and plugins specified at the beginning of the script.
+###### Sources:
+* Udemy
+* Checkio
+
+###### Specs:
+* PyCharm 2019.2 Community
+* Python 3.7
