@@ -5,6 +5,7 @@ Input: String, special characters allowed.
 Output: Most common letter (special characters ir whitespace not counted). In case of multiple same frequencies, returns
 letter first in alphabet.
 
+
 Task (from Checkio):
 You should find the most frequent letter in the text. The letter returned must be in lower case.
 While checking for the most wanted letter, casing does not matter, so for the purpose of your search, "A" == "a".
