@@ -5,3 +5,5 @@ venv/
 
 #specific files
 regEx.py
+squareChest.py
+areaIsland.py
