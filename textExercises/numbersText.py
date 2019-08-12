@@ -70,7 +70,6 @@ def checkio(number):
 
 if __name__ == '__main__':
 
-    print(checkio(88))
     #These "asserts" using only for self-checking and not necessary for auto-testing
     assert checkio(4) == 'four', "1st example"
     assert checkio(133) == 'one hundred thirty three', "2nd example"
