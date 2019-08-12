@@ -13,25 +13,32 @@ Preconditions:
 2 ≤ sides ≤ 20
 0 ≤ target < 1000
 '''
-import itertools
+
+from itertools import combinations_with_replacement
+from math import factorial
+from collections import Counter
 
 
 def probability(dice_number, sides, target):
-    dice_combinations = itertools.product(list(range(1, sides + 1)), repeat=dice_number)
+    # trimmed combinations to curb processing time for outliers
+    dice_combinations = combinations_with_replacement(range(1, sides + 1), dice_number)
 
-    # favourable outcomes
+    # favourable outcomes, calculating permutations only for fo
     fo = 0
-    total = 0
     for die in dice_combinations:
         if sum(die) == target:
-            fo += 1
-        total += 1
+            c = Counter(die)
+            perm = factorial(dice_number)
+            for item in c:
+                perm = perm/factorial(c[item])
+            fo += perm
 
-    return round(fo / total, 4)
+    return round(fo / (sides**dice_number), 4)
 
 
 if __name__ == '__main__':
     # These are only used for self-checking and are not necessary for auto-testing
+    print(probability(3,6,7))
     assert probability(2, 6, 3) == 0.0556, "Basic example"
     assert probability(2, 6, 4) == 0.0833, "More points"
     assert probability(2, 6, 7) == 0.1667, "Maximum for two 6-sided dice"
@@ -39,4 +46,3 @@ if __name__ == '__main__':
     assert probability(2, 3, 7) == 0, "Never!"
     assert probability(3, 6, 7) == 0.0694, "Three dice"
     #assert probability(10, 10, 50) == 0.0375, "Many dice, many sides" <-- brute force lengthy wait, need to figure out better solution
-

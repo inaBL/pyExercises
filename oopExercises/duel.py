@@ -5,6 +5,7 @@ every turn one of the warriors will hit another one and the last will lose his h
 If in the end of the turn the first warrior has > 0 health and the other one doesn’t, the function should return True, in the other case it should return False.
 '''
 
+
 class Warrior():
     def __init__(self):
         self.health = 50
