@@ -17,6 +17,8 @@ class Army():
                     self.units.append(Defender())
                 elif warrior_type == Vampire:
                     self.units.append(Vampire())
+                elif warrior_type == Lancer:
+                    self.units.append(Lancer())
                 i += 1
         except TypeError:
             print('You can only add Warrior types, for more information and subtypes see classWarrior.py')

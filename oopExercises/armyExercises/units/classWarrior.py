@@ -33,9 +33,15 @@ class Vampire(Warrior):
         self.health += float(0.5 * dmg)
 
 
-# 1-1 Duel, connects with army fights
+class Lancer(Warrior):
+    def __init__(self):
+        super().__init__()
+        self.attack = 6
 
-def fight(unit_1, unit_2):
+
+# 1-1 Duel, connects with army fights, added *args for passing Armies into function
+
+def fight(unit_1, unit_2, *args):
     while True:
         if unit_2.defence < unit_1.attack:
             unit_2.health -= unit_1.attack - unit_2.defence
